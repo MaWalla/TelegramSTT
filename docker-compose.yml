@@ -11,7 +11,7 @@ services:
       telegramstt:
         ipv4_address: 172.13.13.2
   deepspeech:
-    image: romainsah/deepspeech-server
+    image: mawalla/deepspeech-server
     volumes:
       - "/opt/telegram-tts/deepspeech:/opt/deepspeech"
     networks:

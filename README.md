@@ -21,14 +21,14 @@ Some env variables can/need to be set for this app to correctly function
 - `FILEPATH`  optional, modifies the path where temporary files for processing are stored, makes senseto modify for standalone installations. Defaults to /files as per docker image.
 
 ## On the DeepSpeech image
-Unless you already got DeepSpeech running, you may wanna use my `docker-compose` file which uses [romainsah/deepspeech-server](https://hub.docker.com/r/romainsah/deepspeech-server).
+Unless you already got DeepSpeech running, you may wanna use my `docker-compose` file, or use the [deepspeech-server image](https://hub.docker.com/repository/docker/mawalla/deepspeech-server) I made (loosely based on [romainsah/deepspeech-server](https://hub.docker.com/r/romainsah/deepspeech-server)). 
 Setting it up is pretty simple. Just adjust the mapping pointing to `/opt/deepspeech` to any suitable path on your server.
 In there you'll need you model (usually a `.scorer` and `.pbmm` file) and a file named `config.json`. In there you'll only need to set:
 ```
 {
   "deepspeech": {
-    "model" :"/opt/deepspeech/output_graph_de.pbmm",
-    "scorer" :"/opt/deepspeech/kenlm_de.scorer",
+    "model" :"/opt/deepspeech/output_graph.pbmm",
+    "scorer" :"/opt/deepspeech/kenlm.scorer",
     "beam_width": 500,
     "lm_alpha": 0.931289039105002,
     "lm_beta": 1.1834137581510284
